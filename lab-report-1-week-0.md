@@ -1,1 +1,1 @@
-![image](cse15l-week-0.png)
+![image](screenshot-cse15l.png)
