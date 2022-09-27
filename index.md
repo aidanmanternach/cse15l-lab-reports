@@ -1,10 +1,8 @@
 # Hello
 
-* This
-*Is*
-**My**
-1. Website
+*This is* 
+**index.md** file
 ---
-> this is cool
+> In order to see lab report 1 click the link
 ---
-[Lab Report 1](https://aidanmanternach.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
+1. [Lab Report 1](https://aidanmanternach.github.io/cse15l-lab-reports/lab-report-1-week-0.html)
