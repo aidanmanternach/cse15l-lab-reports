@@ -33,4 +33,5 @@ When attempting to do the ssh-add for windows I ran into trouble when figuring o
 
 **Part 6: Optimization**  
 When running the terminal you can use more optimal and efficient commands in order to save time and key strokes. I ran some efficient commands as seen in the picture, such as "ls" at the end of ssh command to see the directory and using semi-colons to run multiple commands.  
+
 ![Image](part8.PNG)  
