@@ -28,7 +28,7 @@ Use the above command with the file you want to transfer. This will prompt you t
 A SSH key will allow you to access SSH without having to input a password everytime. In order to create a SSH key run ssh-keygen command. Then transfer the public key to the remote computer using scp.   
 ![Image](part7login.PNG)  
 When attempting to do the ssh-add for windows I ran into trouble when figuring out where to add the public key and how it would be used to aid in not needing a password.  
-![Image](part7-3.PNG)  
+![Image](part7-4.PNG)  
 
 **Part 6: Optimization**  
 When running the terminal you can use more optimal and efficient commands in order to save time and key strokes. I ran some efficient commands as seen in the picture, such as "ls" at the end of ssh command to see the directory and using semi-colons to run multiple commands.  
