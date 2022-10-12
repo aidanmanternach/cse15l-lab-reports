@@ -13,7 +13,7 @@ The above picture contains messages about the failed password attempts.
 ![Image](part4-2.PNG)  
 
 **Step 3: Using Commands**  
-After successfully connecting remotely, we can run some commands in order to see what files are on the remote computer. Some commands that we can run include ```ls```, ```cp```, ```cp ~```, and ```cat /home/linux/ieng6/cs15lfa22/public/hello.txt```. The ls command displays files and folders in the current directory. The cp command will copy a file. The cat command prints the contenets of a file to the screen. In the screenshot below you can see that I ran cat to print out the hello.txt file and other commands.  
+After successfully connecting remotely, we can run some commands in order to see what files are on the remote computer. Some commands that we can run include ```ls```, ```cp```, ```cp ~```, and ```cat /home/linux/ieng6/cs15lfa22/public/hello.txt```. The ls command displays files and folders in the current directory. The cp command will copy a file. The cat command prints the contents of a file to the screen. In the screenshot below you can see that I ran cat to print out the hello.txt file and other commands.  
 ![Image](part5-hello.PNG)  
 
 **Part 4: Transferring to Remote Computer**  
