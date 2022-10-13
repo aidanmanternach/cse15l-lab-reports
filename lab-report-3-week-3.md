@@ -72,11 +72,95 @@ The url in this screenshot will execute very similarly to the screenshot above i
 ```
 # Failure Inducing Input
 @Test
-  public void testAverageWithoutLowest() {
+public void testAverageWithoutLowest() {
     double[] input1 = {2.0, 2.0};
     assertEquals(2.0, ArrayExamples.averageWithoutLowest(input1), .05);
+}
+``` 
+Symptom:  
+![Image](Symptom1.png)  
+```
+# Code with the bug
+static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    for(double num: arr) {
+      // the error occurs at this line
+      // if there are multiple numbers that are equal
+      // to the lowest then they are not added to the sum
+      if(num != lowest) { sum += num; }
+    }
+    return sum / (arr.length - 1);
   }
 ```  
-![Image](Symptom1.png)  
+The bug is that there is only one lowest number, but if there are multiple numbers equal to that lowest number then those numbers are not added to the sum either.
+```
+# The fixed code
+static double averageWithoutLowest(double[] arr) {
+    if(arr.length < 2) { return 0.0; }
+    double lowest = arr[0];
+    for(double num: arr) {
+      if(num < lowest) { lowest = num; }
+    }
+    double sum = 0;
+    boolean lowestFound = false;
+    for(double num: arr) {
+      if((num != lowest) || lowestFound) { sum += num; }
+      else { lowestFound = true; }
+    }
+    return sum / (arr.length - 1);
+  }
+```  
+This bug will occur for any input where the lowest number occurs multiple times in the input array. The symptom from this bug is an average that appears to be lower than the expected average.  
 
-**ListExamples File**
+**ListExamples File**  
+```
+# Failure Inducing Input
+@Test
+public void testFilter() {
+    CheckerContainsB sc = new CheckerContainsB();
+    List<String> arr = new ArrayList<>();
+    arr.add("and");
+    arr.add("hello");
+    arr.add("padres");
+    List<String> expectedArr = new ArrayList<>();
+    expectedArr.add("and");
+    expectedArr.add("padres");
+    assertEquals(expectedArr, ListExamples.filter(arr, sc));
+}
+```  
+Symptom:  
+![Image](symptom2.png)  
+```
+# Code with the bug
+static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        // The error occurs here
+        // Since string is being added to index 0
+        // the returned List will be reversed
+        result.add(0, s);
+      }
+    }
+    return result;
+}
+```  
+The bug was adding the string to the front of the list, which inverted the list.  
+```
+# The fixed code
+static List<String> filter(List<String> list, StringChecker sc) {
+    List<String> result = new ArrayList<>();
+    for(String s: list) {
+      if(sc.checkString(s)) {
+        result.add(s);
+      }
+    }
+    return result;
+}
+```  
+The symptom of this bug was having return lists that whose values were reversed. Therefore, for any input lists that have more that one value that are true for the checkString method it will be reversed.
