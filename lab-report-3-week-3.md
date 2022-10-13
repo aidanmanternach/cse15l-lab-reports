@@ -134,7 +134,7 @@ public void testFilter() {
 }
 ```  
 Symptom:  
-![Image](symptom2.png)  
+![Image](symptom2.PNG)  
 ```
 # Code with the bug
 static List<String> filter(List<String> list, StringChecker sc) {
