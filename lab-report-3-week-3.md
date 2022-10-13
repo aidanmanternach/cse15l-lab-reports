@@ -2,7 +2,7 @@
 ## Part 1: Simplest Search Engine  
 The following code is the implementation for the simplest search engine.  
 ```
-# code block
+# code block - Search Engine
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -69,5 +69,14 @@ The url in this screenshot will execute very similarly to the screenshot above i
 
 ## Part 2: Bugs From Different Files  
 **ArrayExamples File**  
+```
+# Failure Inducing Input
+@Test
+  public void testAverageWithoutLowest() {
+    double[] input1 = {2.0, 2.0};
+    assertEquals(2.0, ArrayExamples.averageWithoutLowest(input1), .05);
+  }
+```  
+![Image](Symptom1.png)  
 
 **ListExamples File**
