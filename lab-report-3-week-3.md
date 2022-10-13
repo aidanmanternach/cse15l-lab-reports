@@ -78,7 +78,7 @@ public void testAverageWithoutLowest() {
 }
 ``` 
 Symptom:  
-![Image](Symptom1.png)  
+![Image](Symptom1.PNG)  
 ```
 # Code with the bug
 static double averageWithoutLowest(double[] arr) {
