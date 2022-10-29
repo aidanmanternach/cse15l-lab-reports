@@ -47,7 +47,7 @@ $ grep -i "forest service" ./plos/*.txt
 ./plos/journal.pbio.0020054.txt:        the regional weather forecasts of so-called mesoscale models. At the Forest Service's Rocky
 ./plos/journal.pbio.0020054.txt:        Seattle. He's been working for several years with United States Forest Service
 ```   
-The first screenshot is an example of a grep that attempts to find "forest service." The second is the same command but with ```-i``` and yeilds much more results because it just searches for that phrase with disregard to capitalization.  
+The first command is an example of a grep that attempts to find "forest service." The second is the same command but with ```-i``` and yeilds much more results because it just searches for that phrase with disregard to capitalization.  
 ```
 $ grep -i "heart failure" ./biomed/*.txt
 ./biomed/1468-6708-3-10.txt:        outpatient], heart failure [HF/treated in the hospital or
@@ -80,7 +80,7 @@ This command will take a word to search for and only return the matching line if
 $ grep -w "pneum" ./biomed/*.txt
 # There is no output
 ```  
-As seen in the section above when searching for pneumonia there were a bunch of different lines containing that word in .txt files in the biomed directory. However, if you want to search for a word that is part of pneumonia for example just pneum then by ```-w``` then all the lines of pneumonia will not show up. This is shown in this screenshot.  
+As seen in the section above when searching for pneumonia there were a bunch of different lines containing that word in .txt files in the biomed directory. However, if you want to search for a word that is part of pneumonia for example just pneum then by ```-w``` then all the lines of pneumonia will not show up. This is shown in this block of code.  
 ```
 $ grep -w "apple" ./biomed/*.txt
 ./biomed/1471-2202-2-5.txt:            computer http://www.apple.com. If the criteria for
@@ -98,7 +98,7 @@ $ grep  "apple" ./biomed/*.txt
 ./biomed/gb-2002-3-12-research0077.txt:          the JAVA applet WebMol [ 35]. In this setting, the color
 ./biomed/gb-2003-4-8-r51.txt:            visualized using QuickPDB, a Java applet developed by
 ```   
-This screenshot illustrates the difference between using ```-w``` and not. For the first command when using ```-w``` it only returned lines with apple, while the second command returned lines with words like pineapple as apple is contained in that word.  
+This illustrates the difference between using ```-w``` and not. For the first command when using ```-w``` it only returned lines with apple, while the second command returned lines with words like pineapple as apple is contained in that word.  
 ```
 # This command output has been cropped
 $ grep  "earl" ./plos/*.txt
