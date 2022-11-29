@@ -4,19 +4,19 @@
 /start<Enter>cebase<Esc>n.n.n.
 ```  
 ![Image](start.PNG)  
-This is a screenshot from after ```/start<Enter>``` which situates the cursor on the first letter of the word start.  
+This is a screenshot from after ```/start<Enter>``` which situates the cursor on the first letter of the word start. The ```/start``` command finds the first instance of the word start in the file and puts the cursor on the first letter in that word.  
 
 ![Image](base.PNG)  
-This is after ```cebase``` which replaces the word start with base.  
+This is after ```cebase``` which replaces the word start with base. The command ```ce``` is change everything until the end of the word. So in this case it changes the word start to base.   
 
 ![Image](firstN..PNG)  
-After the command ```<Esc>n.``` which exits insert mode and the n moves the cursor to the next occurrence of the word start. The period then calls the last command that was used.  
+After the command ```<Esc>n.``` which exits insert mode and the n moves the cursor to the next occurrence of the word start. The period then calls the last command that was used. ```<Esc>``` is the command that exits insert mode and returns to normal mode. Then ```n``` moves the cursor to the next occurence of the word start. The ```.``` then does the last command which was ```cebase```. Thus replacing the word start with base.  
 
 ![Image](secondN.PNG)  
-This is the second ```n.``` which scrolls to the third time start occurs and replaces it with base.  
+This is the second ```n.``` which scrolls to the third time start occurs and replaces it with base. The ```n``` moves the cursor to the next occurence of the word start. The ```.``` then does the last command which was ```cebase```. Thus replacing the word start with base.
 
 ![Image](thirdN.PNG)
-With the final part of the command ```n.``` this does the same thing as above finds the next occurence of the word start and replaces it with base.    
+With the final part of the command ```n.``` this does the same thing as above finds the next occurence of the word start and replaces it with base. The ```n``` moves the cursor to the next occurence of the word start. The ```.``` then does the last command which was ```cebase```. Thus replacing the word start with base.    
 
 ## Part 2  
 When editing the file and then using ```scp``` to copy it onto the remote computer took 70 seconds, while using vim and editing on the remote computer took 30 seconds. One difficulty that occurred when using ```scp``` was that I had some typos in the command and that caused a slight delay.  
